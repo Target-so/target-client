@@ -4,7 +4,7 @@ let currentVideoIndex = 0;
 
 $(document).ready(function () {
   $.ajax({
-    url: "https://bytesotech.cloud/target/api/ads/",
+    url: "https://bytesotech.cloud/target/api/ads/status/1",
     type: "GET",
     dataType: "json",
     success: function (data) {
@@ -12,7 +12,8 @@ $(document).ready(function () {
       videos = data;
       videoIds = videos.map(({ video }) => video.split("v=")[1]);
       playNextVideo(); // Start playing the videos
-    //   setInterval(playNextVideo, 30000); // Play the next video every 30 seconds
+      //   setInterval(playNextVideo, 30000); // Play the next video every 30 seconds
+      setInterval(playNextVideo, 30000);
     },
     error: function (request, msg, error) {
       console.log("Error in Operation");
@@ -40,6 +41,5 @@ $(document).ready(function () {
     if (currentVideoIndex >= videos.length) {
       currentVideoIndex = 0;
     }
-    setInterval(playNextVideo, 30000);
   }
 });
