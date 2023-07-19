@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+
+.plyr__video-embed .ytp-title {
+    display: none !important;
+  }
+  
+  .plyr__video-embed .ytp-chrome-bottom {
+    display: none !important;
+  }
